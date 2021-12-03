@@ -1,0 +1,63 @@
+﻿@model IEnumerable<Librería.Models.libros>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Libros</h2>
+
+<p>
+    @Html.ActionLink("Nuevo Libro", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.idLibros)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.nombreLibro)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.fechaPublicacion)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.precioLibro)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.idEditorial)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.idAutor)
+        </th>
+        <th>Acciones</th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.idLibros)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.nombreLibro)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.fechaPublicacion)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.precioLibro)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.idEditorial)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.idAutor)
+        </td>
+        <td>
+            @Html.ActionLink("Editar", "Edit", new { id=item.idLibros }) |
+            @Html.ActionLink("Detalles", "Details", new { id=item.idLibros }) |
+            @Html.ActionLink("Eliminar", "Delete", new { id=item.idLibros })
+        </td>
+    </tr>
+}
+
+</table>

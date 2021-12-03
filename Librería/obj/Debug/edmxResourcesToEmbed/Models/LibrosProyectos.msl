@@ -1,0 +1,68 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="LibrosProyectoModelStoreContainer" CdmEntityContainer="LibrosProyectoEntities">
+    <EntitySetMapping Name="autor">
+      <EntityTypeMapping TypeName="LibrosProyectoModel.autor">
+        <MappingFragment StoreEntitySet="autor">
+          <ScalarProperty Name="idAutor" ColumnName="idAutor" />
+          <ScalarProperty Name="nombreAutor" ColumnName="nombreAutor" />
+          <ScalarProperty Name="apellidoAutor" ColumnName="apellidoAutor" />
+          <ScalarProperty Name="estado" ColumnName="estado" />
+          <ScalarProperty Name="edad" ColumnName="edad" />
+          <ScalarProperty Name="pais" ColumnName="pais" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="editorial">
+      <EntityTypeMapping TypeName="LibrosProyectoModel.editorial">
+        <MappingFragment StoreEntitySet="editorial">
+          <ScalarProperty Name="idEditorial" ColumnName="idEditorial" />
+          <ScalarProperty Name="nombreEditorial" ColumnName="nombreEditorial" />
+          <ScalarProperty Name="direccionEditorial" ColumnName="direccionEditorial" />
+          <ScalarProperty Name="descripcion" ColumnName="descripcion" />
+          <ScalarProperty Name="telefono" ColumnName="telefono" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="factura">
+      <EntityTypeMapping TypeName="LibrosProyectoModel.factura">
+        <MappingFragment StoreEntitySet="factura">
+          <ScalarProperty Name="idFactura" ColumnName="idFactura" />
+          <ScalarProperty Name="nombreCliente" ColumnName="nombreCliente" />
+          <ScalarProperty Name="fechaFactura" ColumnName="fechaFactura" />
+          <ScalarProperty Name="descripcion" ColumnName="descripcion" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="facturaDetalle">
+      <EntityTypeMapping TypeName="LibrosProyectoModel.facturaDetalle">
+        <MappingFragment StoreEntitySet="facturaDetalle">
+          <ScalarProperty Name="idFactDetalle" ColumnName="idFactDetalle" />
+          <ScalarProperty Name="idLibros" ColumnName="idLibros" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="libros">
+      <EntityTypeMapping TypeName="LibrosProyectoModel.libros">
+        <MappingFragment StoreEntitySet="libros">
+          <ScalarProperty Name="idAutor" ColumnName="idAutor" />
+          <ScalarProperty Name="idLibros" ColumnName="idLibros" />
+          <ScalarProperty Name="nombreLibro" ColumnName="nombreLibro" />
+          <ScalarProperty Name="fechaPublicacion" ColumnName="fechaPublicacion" />
+          <ScalarProperty Name="precioLibro" ColumnName="precioLibro" />
+          <ScalarProperty Name="idEditorial" ColumnName="idEditorial" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="usuario">
+      <EntityTypeMapping TypeName="LibrosProyectoModel.usuario">
+        <MappingFragment StoreEntitySet="usuario">
+          <ScalarProperty Name="idUsario" ColumnName="idUsario" />
+          <ScalarProperty Name="userName" ColumnName="userName" />
+          <ScalarProperty Name="pswrd" ColumnName="pswrd" />
+          <ScalarProperty Name="nombreDelUsuario" ColumnName="nombreDelUsuario" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

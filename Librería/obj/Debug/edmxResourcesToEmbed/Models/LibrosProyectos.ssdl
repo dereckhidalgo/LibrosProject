@@ -1,0 +1,68 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="LibrosProyectoModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="autor">
+    <Key>
+      <PropertyRef Name="idAutor" />
+    </Key>
+    <Property Name="idAutor" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="nombreAutor" Type="varchar" MaxLength="30" />
+    <Property Name="apellidoAutor" Type="varchar" MaxLength="30" />
+    <Property Name="estado" Type="varchar" MaxLength="10" />
+    <Property Name="edad" Type="int" />
+    <Property Name="pais" Type="varchar" MaxLength="30" />
+  </EntityType>
+  <EntityType Name="editorial">
+    <Key>
+      <PropertyRef Name="idEditorial" />
+    </Key>
+    <Property Name="idEditorial" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="nombreEditorial" Type="varchar" MaxLength="50" />
+    <Property Name="direccionEditorial" Type="varchar" MaxLength="100" />
+    <Property Name="descripcion" Type="varchar" MaxLength="100" />
+    <Property Name="telefono" Type="varchar" MaxLength="30" />
+  </EntityType>
+  <EntityType Name="factura">
+    <Key>
+      <PropertyRef Name="idFactura" />
+    </Key>
+    <Property Name="idFactura" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="nombreCliente" Type="varchar" MaxLength="30" />
+    <Property Name="fechaFactura" Type="datetime" />
+    <Property Name="descripcion" Type="varchar" MaxLength="200" />
+  </EntityType>
+  <EntityType Name="facturaDetalle">
+    <Key>
+      <PropertyRef Name="idFactDetalle" />
+    </Key>
+    <Property Name="idFactDetalle" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="idLibros" Type="int" />
+  </EntityType>
+  <EntityType Name="libros">
+    <Key>
+      <PropertyRef Name="idLibros" />
+    </Key>
+    <Property Name="idLibros" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="nombreLibro" Type="varchar" MaxLength="100" />
+    <Property Name="fechaPublicacion" Type="datetime" />
+    <Property Name="precioLibro" Type="decimal" Precision="18" Scale="0" />
+    <Property Name="idEditorial" Type="int" />
+    <Property Name="idAutor" Type="int" />
+  </EntityType>
+  <EntityType Name="usuario">
+    <Key>
+      <PropertyRef Name="idUsario" />
+    </Key>
+    <Property Name="idUsario" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="userName" Type="varchar" MaxLength="50" />
+    <Property Name="pswrd" Type="varchar" MaxLength="50" />
+    <Property Name="nombreDelUsuario" Type="varchar" MaxLength="30" />
+  </EntityType>
+  <EntityContainer Name="LibrosProyectoModelStoreContainer">
+    <EntitySet Name="autor" EntityType="Self.autor" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="editorial" EntityType="Self.editorial" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="factura" EntityType="Self.factura" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="facturaDetalle" EntityType="Self.facturaDetalle" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="libros" EntityType="Self.libros" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="usuario" EntityType="Self.usuario" Schema="dbo" store:Type="Tables" />
+  </EntityContainer>
+</Schema>

@@ -1,0 +1,234 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="LibrosProyectoModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="autor">
+          <Key>
+            <PropertyRef Name="idAutor" />
+          </Key>
+          <Property Name="idAutor" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="nombreAutor" Type="varchar" MaxLength="30" />
+          <Property Name="apellidoAutor" Type="varchar" MaxLength="30" />
+          <Property Name="estado" Type="varchar" MaxLength="10" />
+          <Property Name="edad" Type="int" />
+          <Property Name="pais" Type="varchar" MaxLength="30" />
+        </EntityType>
+        <EntityType Name="editorial">
+          <Key>
+            <PropertyRef Name="idEditorial" />
+          </Key>
+          <Property Name="idEditorial" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="nombreEditorial" Type="varchar" MaxLength="50" />
+          <Property Name="direccionEditorial" Type="varchar" MaxLength="100" />
+          <Property Name="descripcion" Type="varchar" MaxLength="100" />
+          <Property Name="telefono" Type="varchar" MaxLength="30" />
+        </EntityType>
+        <EntityType Name="factura">
+          <Key>
+            <PropertyRef Name="idFactura" />
+          </Key>
+          <Property Name="idFactura" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="nombreCliente" Type="varchar" MaxLength="30" />
+          <Property Name="fechaFactura" Type="datetime" />
+          <Property Name="descripcion" Type="varchar" MaxLength="200" />
+        </EntityType>
+        <EntityType Name="facturaDetalle">
+          <Key>
+            <PropertyRef Name="idFactDetalle" />
+          </Key>
+          <Property Name="idFactDetalle" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="idLibros" Type="int" />
+        </EntityType>
+        <EntityType Name="libros">
+          <Key>
+            <PropertyRef Name="idLibros" />
+          </Key>
+          <Property Name="idLibros" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="nombreLibro" Type="varchar" MaxLength="100" />
+          <Property Name="fechaPublicacion" Type="datetime" />
+          <Property Name="precioLibro" Type="decimal" Precision="18" Scale="0" />
+          <Property Name="idEditorial" Type="int" />
+          <Property Name="idAutor" Type="int" />
+        </EntityType>
+        <EntityType Name="usuario">
+          <Key>
+            <PropertyRef Name="idUsario" />
+          </Key>
+          <Property Name="idUsario" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="userName" Type="varchar" MaxLength="50" />
+          <Property Name="pswrd" Type="varchar" MaxLength="50" />
+          <Property Name="nombreDelUsuario" Type="varchar" MaxLength="30" />
+        </EntityType>
+        <EntityContainer Name="LibrosProyectoModelStoreContainer">
+          <EntitySet Name="autor" EntityType="Self.autor" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="editorial" EntityType="Self.editorial" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="factura" EntityType="Self.factura" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="facturaDetalle" EntityType="Self.facturaDetalle" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="libros" EntityType="Self.libros" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="usuario" EntityType="Self.usuario" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="LibrosProyectoModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="autor">
+          <Key>
+            <PropertyRef Name="idAutor" />
+          </Key>
+          <Property Name="idAutor" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="nombreAutor" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="apellidoAutor" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="estado" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="edad" Type="Int32" />
+          <Property Name="pais" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="editorial">
+          <Key>
+            <PropertyRef Name="idEditorial" />
+          </Key>
+          <Property Name="idEditorial" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="nombreEditorial" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="direccionEditorial" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="descripcion" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="telefono" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="factura">
+          <Key>
+            <PropertyRef Name="idFactura" />
+          </Key>
+          <Property Name="idFactura" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="nombreCliente" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="fechaFactura" Type="DateTime" Precision="3" />
+          <Property Name="descripcion" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="facturaDetalle">
+          <Key>
+            <PropertyRef Name="idFactDetalle" />
+          </Key>
+          <Property Name="idFactDetalle" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="idLibros" Type="Int32" />
+        </EntityType>
+        <EntityType Name="libros">
+          <Key>
+            <PropertyRef Name="idLibros" />
+          </Key>
+          <Property Name="idLibros" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="nombreLibro" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="fechaPublicacion" Type="DateTime" Precision="3" />
+          <Property Name="precioLibro" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="idEditorial" Type="Int32" />
+          <Property Name="idAutor" Type="Int32" />
+        </EntityType>
+        <EntityType Name="usuario">
+          <Key>
+            <PropertyRef Name="idUsario" />
+          </Key>
+          <Property Name="idUsario" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="userName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="pswrd" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="nombreDelUsuario" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityContainer Name="LibrosProyectoEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="autor" EntityType="Self.autor" />
+          <EntitySet Name="editorial" EntityType="Self.editorial" />
+          <EntitySet Name="factura" EntityType="Self.factura" />
+          <EntitySet Name="facturaDetalle" EntityType="Self.facturaDetalle" />
+          <EntitySet Name="libros" EntityType="Self.libros" />
+          <EntitySet Name="usuario" EntityType="Self.usuario" />
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="LibrosProyectoModelStoreContainer" CdmEntityContainer="LibrosProyectoEntities">
+          <EntitySetMapping Name="autor">
+            <EntityTypeMapping TypeName="LibrosProyectoModel.autor">
+              <MappingFragment StoreEntitySet="autor">
+                <ScalarProperty Name="idAutor" ColumnName="idAutor" />
+                <ScalarProperty Name="nombreAutor" ColumnName="nombreAutor" />
+                <ScalarProperty Name="apellidoAutor" ColumnName="apellidoAutor" />
+                <ScalarProperty Name="estado" ColumnName="estado" />
+                <ScalarProperty Name="edad" ColumnName="edad" />
+                <ScalarProperty Name="pais" ColumnName="pais" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="editorial">
+            <EntityTypeMapping TypeName="LibrosProyectoModel.editorial">
+              <MappingFragment StoreEntitySet="editorial">
+                <ScalarProperty Name="idEditorial" ColumnName="idEditorial" />
+                <ScalarProperty Name="nombreEditorial" ColumnName="nombreEditorial" />
+                <ScalarProperty Name="direccionEditorial" ColumnName="direccionEditorial" />
+                <ScalarProperty Name="descripcion" ColumnName="descripcion" />
+                <ScalarProperty Name="telefono" ColumnName="telefono" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="factura">
+            <EntityTypeMapping TypeName="LibrosProyectoModel.factura">
+              <MappingFragment StoreEntitySet="factura">
+                <ScalarProperty Name="idFactura" ColumnName="idFactura" />
+                <ScalarProperty Name="nombreCliente" ColumnName="nombreCliente" />
+                <ScalarProperty Name="fechaFactura" ColumnName="fechaFactura" />
+                <ScalarProperty Name="descripcion" ColumnName="descripcion" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="facturaDetalle">
+            <EntityTypeMapping TypeName="LibrosProyectoModel.facturaDetalle">
+              <MappingFragment StoreEntitySet="facturaDetalle">
+                <ScalarProperty Name="idFactDetalle" ColumnName="idFactDetalle" />
+                <ScalarProperty Name="idLibros" ColumnName="idLibros" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="libros">
+            <EntityTypeMapping TypeName="LibrosProyectoModel.libros">
+              <MappingFragment StoreEntitySet="libros">
+                <ScalarProperty Name="idAutor" ColumnName="idAutor" />
+                <ScalarProperty Name="idLibros" ColumnName="idLibros" />
+                <ScalarProperty Name="nombreLibro" ColumnName="nombreLibro" />
+                <ScalarProperty Name="fechaPublicacion" ColumnName="fechaPublicacion" />
+                <ScalarProperty Name="precioLibro" ColumnName="precioLibro" />
+                <ScalarProperty Name="idEditorial" ColumnName="idEditorial" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="usuario">
+            <EntityTypeMapping TypeName="LibrosProyectoModel.usuario">
+              <MappingFragment StoreEntitySet="usuario">
+                <ScalarProperty Name="idUsario" ColumnName="idUsario" />
+                <ScalarProperty Name="userName" ColumnName="userName" />
+                <ScalarProperty Name="pswrd" ColumnName="pswrd" />
+                <ScalarProperty Name="nombreDelUsuario" ColumnName="nombreDelUsuario" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="Ninguno" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

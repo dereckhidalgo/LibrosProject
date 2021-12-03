@@ -1,0 +1,58 @@
+﻿@model Librería.Models.autor
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>autor</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.nombreAutor)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.nombreAutor)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.apellidoAutor)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.apellidoAutor)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.estado)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.estado)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.edad)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.edad)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.pais)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.pais)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.idAutor }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

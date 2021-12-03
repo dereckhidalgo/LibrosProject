@@ -1,0 +1,50 @@
+﻿@model Librería.Models.editorial
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>editorial</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.nombreEditorial)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.nombreEditorial)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.direccionEditorial)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.direccionEditorial)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.descripcion)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.descripcion)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.telefono)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.telefono)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.idEditorial }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
