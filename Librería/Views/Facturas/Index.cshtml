@@ -20,6 +20,13 @@
         <th>
             @Html.DisplayNameFor(model => model.descripcion)
         </th>
+        <th>
+            @Html.DisplayNameFor(model => model.cantidad)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.idLibro)
+        </th>
+        <th></th>
     </tr>
 
 @foreach (var item in Model) {
@@ -32,6 +39,17 @@
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.descripcion)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.cantidad)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.idLibro)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.idFactura }) |
+            @Html.ActionLink("Details", "Details", new { id=item.idFactura }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.idFactura })
         </td>
     </tr>
 }

@@ -34,6 +34,8 @@
           <Property Name="nombreCliente" Type="varchar" MaxLength="30" />
           <Property Name="fechaFactura" Type="datetime" />
           <Property Name="descripcion" Type="varchar" MaxLength="200" />
+          <Property Name="cantidad" Type="int" />
+          <Property Name="idLibro" Type="int" />
         </EntityType>
         <EntityType Name="facturaDetalle">
           <Key>
@@ -103,6 +105,8 @@
           <Property Name="nombreCliente" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
           <Property Name="fechaFactura" Type="DateTime" Precision="3" />
           <Property Name="descripcion" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="cantidad" Type="Int32" />
+          <Property Name="idLibro" Type="Int32" />
         </EntityType>
         <EntityType Name="facturaDetalle">
           <Key>
@@ -171,6 +175,8 @@
           <EntitySetMapping Name="factura">
             <EntityTypeMapping TypeName="LibrosProyectoModel.factura">
               <MappingFragment StoreEntitySet="factura">
+                <ScalarProperty Name="idLibro" ColumnName="idLibro" />
+                <ScalarProperty Name="cantidad" ColumnName="cantidad" />
                 <ScalarProperty Name="idFactura" ColumnName="idFactura" />
                 <ScalarProperty Name="nombreCliente" ColumnName="nombreCliente" />
                 <ScalarProperty Name="fechaFactura" ColumnName="fechaFactura" />

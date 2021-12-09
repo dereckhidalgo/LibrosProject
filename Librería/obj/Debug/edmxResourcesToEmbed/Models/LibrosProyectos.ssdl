@@ -29,6 +29,8 @@
     <Property Name="nombreCliente" Type="varchar" MaxLength="30" />
     <Property Name="fechaFactura" Type="datetime" />
     <Property Name="descripcion" Type="varchar" MaxLength="200" />
+    <Property Name="cantidad" Type="int" />
+    <Property Name="idLibro" Type="int" />
   </EntityType>
   <EntityType Name="facturaDetalle">
     <Key>

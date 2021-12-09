@@ -178,6 +178,7 @@
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\libros.css" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
@@ -244,11 +245,10 @@
     <Content Include="Views\Editorial\Delete.cshtml" />
     <Content Include="Views\Facturas\Index.cshtml" />
     <Content Include="Views\Facturas\Create.cshtml" />
-    <Content Include="Views\facturaDetalle\Index.cshtml" />
-    <Content Include="Views\facturaDetalle\Create.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Views\facturaDetalle\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />

@@ -3,61 +3,38 @@
 @{
     ViewBag.Title = "Index";
 }
-
-<h2>Libros</h2>
+<link href="~/Content/libros.css"/>
+<h2>Area de Libros</h2>
 
 <p>
     @Html.ActionLink("Nuevo Libro", "Create")
 </p>
-<table class="table">
-    <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.idLibros)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.nombreLibro)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.fechaPublicacion)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.precioLibro)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.idEditorial)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.idAutor)
-        </th>
-        <th>Acciones</th>
-    </tr>
-
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.idLibros)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.nombreLibro)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.fechaPublicacion)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.precioLibro)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.idEditorial)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.idAutor)
-        </td>
-        <td>
-            @Html.ActionLink("Editar", "Edit", new { id=item.idLibros }) |
-            @Html.ActionLink("Detalles", "Details", new { id=item.idLibros }) |
-            @Html.ActionLink("Eliminar", "Delete", new { id=item.idLibros })
-        </td>
-    </tr>
-}
-
-</table>
+<div id="container" style="display:flex; flex-wrap:wrap; justify-content:center; width: 90%; border-radius: 5px; box-shadow: 4px 3px 42px -6px rgba(0,0,0,0.8); -webkit-box-shadow: 4px 3px 42px -6px rgba(0,0,0,0.8); -moz-box-shadow: 4px 3px 42px -6px rgba(0,0,0,0.8);">
+    @foreach (var item in Model)
+    {
+    <div class="content" style="gap: 10px; margin: 20px; margin-left: 6%; max-width: 150px; min-width: 250px; width: 90%; height: 50%; border-radius: 5px; box-shadow: 1px 5px 12px -5px rgba(0,0,0,0.8); padding:10px;">
+        <label>ID</label>
+        @Html.DisplayFor(modelItem => item.idLibros)
+        <br />
+        <label>Nombre</label>
+        @Html.DisplayFor(modelItem => item.nombreLibro)
+        <br />
+        <label>Fecha publicación</label>
+        @Html.DisplayFor(modelItem => item.fechaPublicacion)
+        <br />
+        <label>Precio</label>
+        @Html.DisplayFor(modelItem => item.precioLibro)
+        <br />
+        <label>Editorial</label>
+        @Html.DisplayFor(modelItem => item.idEditorial)
+        <br />
+        <label>Autor</label>
+        @Html.DisplayFor(modelItem => item.idAutor)
+        <br />
+        <label>acciones</label>
+        @Html.ActionLink("Editar", "Edit", new { id = item.idLibros }) |
+        @Html.ActionLink("Detalles", "Details", new { id = item.idLibros }) |
+        @Html.ActionLink("Eliminar", "Delete", new { id = item.idLibros })
+    </div>
+    }
+</div>

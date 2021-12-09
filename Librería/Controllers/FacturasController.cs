@@ -13,7 +13,7 @@ namespace Librería.Controllers
         // GET: Facturas
         public ActionResult Index()
         {
-            return View(bd.factura.ToList());
+            return View(bd.factura);
         }
         public ActionResult Create()
         {

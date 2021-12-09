@@ -1,13 +1,13 @@
 ﻿@model IEnumerable<Librería.Models.editorial>
 
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "Editorial";
 }
 
-<h2>Index</h2>
+<h2>Editorial</h2>
 
 <p>
-    @Html.ActionLink("Create New", "Create")
+    @Html.ActionLink("Nuevo Editorial", "Create")
 </p>
 <table class="table">
     <tr>
@@ -41,9 +41,9 @@
             @Html.DisplayFor(modelItem => item.telefono)
         </td>
         <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.idEditorial }) |
-            @Html.ActionLink("Details", "Details", new { id=item.idEditorial }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.idEditorial })
+            @Html.ActionLink("Editar", "Edit", new { id=item.idEditorial }) |
+            @Html.ActionLink("Detalles", "Details", new { id=item.idEditorial }) |
+            @Html.ActionLink("Eliminar", "Delete", new { id=item.idEditorial })
         </td>
     </tr>
 }

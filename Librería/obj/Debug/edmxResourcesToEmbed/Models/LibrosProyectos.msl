@@ -27,6 +27,8 @@
     <EntitySetMapping Name="factura">
       <EntityTypeMapping TypeName="LibrosProyectoModel.factura">
         <MappingFragment StoreEntitySet="factura">
+          <ScalarProperty Name="idLibro" ColumnName="idLibro" />
+          <ScalarProperty Name="cantidad" ColumnName="cantidad" />
           <ScalarProperty Name="idFactura" ColumnName="idFactura" />
           <ScalarProperty Name="nombreCliente" ColumnName="nombreCliente" />
           <ScalarProperty Name="fechaFactura" ColumnName="fechaFactura" />

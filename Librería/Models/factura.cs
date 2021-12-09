@@ -18,5 +18,7 @@ namespace Librería.Models
         public string nombreCliente { get; set; }
         public Nullable<System.DateTime> fechaFactura { get; set; }
         public string descripcion { get; set; }
+        public Nullable<int> cantidad { get; set; }
+        public Nullable<int> idLibro { get; set; }
     }
 }
